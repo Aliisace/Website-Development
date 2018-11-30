@@ -1,0 +1,89 @@
+#image{
+    width: 250px; /* you can use % */
+    height: auto;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777777;
+    color: black;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper{
+    width: 350px; 
+    padding: 20px;
+}
+
+.parallaxT {
+    /* The image used */
+    background-image: url("ngbts.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxI {
+    /* The image used */
+    background-image: url("landscape2017.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    padding: 80px 120px;
+}
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #ffffff !important;
+}
+
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+  }
+  .parallaxT {
+    background-attachment: scroll;
+  }
+  .parallaxI {
+    background-attachment: scroll;
+  }
+}
+
+footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 30px;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+/** { border: 1px solid black; }*/
