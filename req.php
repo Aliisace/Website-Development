@@ -17,6 +17,83 @@
     </head>
     <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <table>
+                            <tr>
+                                <th>Requirement</th>
+                                <th>Application</th>
+                            </tr>
+                                <tr>
+                                    <td>A Clear use of HTML5</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Use of the Bootstrap framework providing a responsive layout</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Use of JavaScript to manipulate the DOM based on an event</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>JavaScript loading of dynamically changing information</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Use of jQuery in conjunction with the DOM</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Use of a jQuery plugin to enhance your application</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Use of AJAX (pure JavaScript i.e. without the use of a library)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Use of the jQuery AJAX function</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Use of cookies</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>User login functionality (PHP/MySQL)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Admin section of the website (PHP/MySQL)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Ability to select, add, edit and delete information from a database (PHP/MySQL)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Appropriate consideration of relevant laws</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Security measures:
+                                        <ul>
+                                            <li>SQL queries should be written as prepared statements</li>
+                                            <li>Passwords should be salted and hashed</li>
+                                            <li>Validation of user input</li>
+                                            <li>Any other relevant security features</li>
+                                        </ul>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php include 'foot.php'; ?>
     </body>
     </html>

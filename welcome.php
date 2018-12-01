@@ -40,8 +40,9 @@
     <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
         <div class="text-center">                  
+            <?php include "button.php" ?>                  
             <div class="page-header">
-                <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>: <br><img src="Alestormlogo.png" height="150" width="auto" ><br> Welcomes you to our site.</h1>
+                <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>: <br><?php include "logo.php" ?><br> Welcomes you to our site.</h1>
             </div>
             <p>
                 Account Options:<br>

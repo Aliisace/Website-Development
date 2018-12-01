@@ -39,16 +39,19 @@
     </head>
     <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
-        <div class="text-center">                  
+        <div class="text-center"><br>
+            <?php include "button.php" ?>                  
             <div class="page-header">
-                <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>: <br><img src="Alestormlogo.png" height="150" width="auto" ><br> Welcomes you to our site.</h1>
+                <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>: <br><?php include "logo.php" ?><br> Welcomes you to our site.</h1>
             </div>
             <p>
                 Account Options:<br>
                 <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
                 <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
                 <a href="deleteAc.php" class="btn btn-danger">Delete Your Account</a>
-                <br>Admin Privilages: <br>
+            </p>
+            <p>
+                Admin Privilages:<br>
                 <a href="delete.php" class="btn btn-danger">Delete other accounts</a>
                 <a href="changeStatus.php" class="btn btn-warning">Change User Status</a>
             </p>
