@@ -1,94 +1,95 @@
-/*
-	Desc: Skeleton code for CSS swap.  Refer to the cookie.js library included in the zip file
-	
-	Author: Lynsay A. Shepherd
-	
-	Date: September 2016
-*/
+//save user preference with cookies
 
-window.onload = function()
-{
-	getCookieS();
+window.onload = function() {
 	prepPage();
-} 
+};
 
 function prepPage() {
-	//check cookies	
-	document.getElementById("l0").onclick = function(){setLogo("l0")};
-	document.getElementById("l1").onclick = function(){setLogo("l1")};
-	document.getElementById("l2").onclick = function(){setLogo("l2")};
-	document.getElementById("l3").onclick = function(){setLogo("l3")};
+	checkCookie();
+	document.getElementById("l0").onclick = function() {setLogo("l0")};
+	document.getElementById("l1").onclick = function() {setLogo("l1")};
+	document.getElementById("l2").onclick = function() {setLogo("l2")};
+	document.getElementById("l3").onclick = function() {setLogo("l3")};
 }
 
-function setLogoCookie(name, value, expires)
-{
-	expires = new Date((new Date()).getTime() + expires*3600000);
-  	var argv = setCookie.arguments;
-  	var argc = setCookie.arguments.length;
-  	var path = (argc > 3) ? argv[3] : null;
-  	var domain = (argc > 4) ? argv[4] : null;
-  	var secure = (argc > 5) ? argv[5] : false;
-  	document.cookie = name + "=" + escape(value) + 
-                    ((expires == null) ? "" : ("; expires=" + 
-                    expires.toGMTString())) +
-                    ((path == null) ? "" : ("; path=" + path)) +
-                    ((domain == null) ? "" : ("; domain=" + domain)) +
-                    ((secure == true) ? "; secure" : "");                  
-}//end function setCookie
+function showCookie(){
+    console.log(document.cookie);
+}
 
-function getCookieS(name)
-{
-   	var ckname = name + "=";
-   	var dc = document.cookie;
+function setLogoCookie(cname, cvalue, exdays) {
+	// Encode value in order to escape semicolons, commas, and whitespace
+    document.cookie = "Logo=; max-age=0";
+    
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
 
-   	if (dc.length > 0)
-	{
-      	begin = dc.indexOf(ckname);
-      	if(begin != -1)
-		{
-         	begin += ckname.length;  
-         	end = dc.indexOf(";", begin);
-         	if(end == -1){end=dc.length;}
-         	return unescape (dc.substring(begin, end));
-      	}
-   	}
-   	return;
-}//end function getCookie
+function getCookieS(Logo) {
+	// Split cookie string and get all individual name=value pairs in an array
+    var cookieArr = document.cookie.split(";");
+    
+    // Loop through the array elements
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+        
+        /* Removing whitespace at the beginning of the cookie name
+        and compare it with the given string */
+        if(name == cookiePair[0].trim()) {
+            // Decode the cookie value and return
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    
+    // Return null if not found
+    return null;
+}
 
-function deleteCookie(name)
-{
-  	var expire = new Date();
-  	expire.setTime(expire.getTime() - 1);	//set expiration date to history
-  	var cookieval = getCookie(name);
-  	if (cookieval != null)
-	{ 
-     	document.cookie = name + '=' + cookieval + "; expires=" + expire.toGMTString();
-     	return true;
-  	}
-  	else
-  	{
-		return false;
-	}
-}//end function deleteCookie
+function checkCookie() {
+    // Get cookie using our custom function
+    var l0 = getCookieS("l0");
+    var l1 = getCookieS("l1");
+    var l2 = getCookieS("l2");
+    var l3 = getCookieS("l3");
+    
+    if(l0 != "") {
+        document.getElementById("imageLogo").src = "options/option0.png";
+    }
+    else if(l1 != "") {
+        document.getElementById("imageLogo").src = "options/option1.png";
+    }
+    else if(l2 != "") {
+        document.getElementById("imageLogo").src = "options/option2.png";
+    }
+    else if(l3 != "") {
+        document.getElementById("imageLogo").src = "options/option3.png";
+    }
+    else{
+    	document.cookie = "Logo=; max-age=0";
+    }
+}
 
 function setLogo(Logo) {
+	console.log(Logo); 
 	if (Logo == "l0"){
 		document.getElementById("imageLogo").src = "options/option0.png";
-		setLogoCookie("l0", );
+		setLogoCookie("l0", "yes", 30);
 	}
 	else if (Logo == "l1"){
 		document.getElementById("imageLogo").src = "options/option1.png";
-		setLogoCookie("l1");
+		setLogoCookie("l1", "yes", 30);
 	}
 	else if (Logo == "l2"){
 		document.getElementById("imageLogo").src = "options/option2.png";
-		setLogoCookie("l2");
+		setLogoCookie("l2", "yes", 30);
 	}
 	else if (Logo == "l3"){
 		document.getElementById("imageLogo").src = "options/option3.png";
-		setLogoCookie("l3");
+		setLogoCookie("l3", "yes", 30);
 	}
 	else {
-		alert("that's not an option: " + Logo);
+		document.getElementById("imageLogo").src = "options/option0.png";
+		setLogoCookie("l0", "yes", 30);
 	}  
 }

@@ -3,5 +3,6 @@
 	<button class="btn btn-dark" id="l1">Logo 1</button>
 	<button class="btn btn-dark" id="l2">Logo 2</button>
 	<button class="btn btn-dark" id="l3">Logo 3</button>
+	<button class="btn btn-dark" onclick="showCookie()">Show cookie</button>
 </p>
 <script type="text/javascript" src="logoSwitch.js"></script>
