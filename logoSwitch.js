@@ -2,48 +2,59 @@
 
 window.onload = function() {
 	prepPage();
+    checkCookiesEnabled();
 };
 
 function prepPage() {
 	checkCookie();
-	document.getElementById("l0").onclick = function() {setLogo("l0")};
-	document.getElementById("l1").onclick = function() {setLogo("l1")};
-	document.getElementById("l2").onclick = function() {setLogo("l2")};
-	document.getElementById("l3").onclick = function() {setLogo("l3")};
+	document.getElementById("l0").onclick = function() {setLogo("l0");};
+	document.getElementById("l1").onclick = function() {setLogo("l1");};
+	document.getElementById("l2").onclick = function() {setLogo("l2");};
+	document.getElementById("l3").onclick = function() {setLogo("l3");};
+	//document.getElementById("show").onclick = function() {showCookie();};
 }
 
-function showCookie(){
+/*function showCookie(){
     console.log(document.cookie);
+}*/
+
+function checkCookiesEnabled() {
+    if (navigator.cookieEnabled==true) {
+        //alert("Cookies are enabled")
+    }
+    else {
+        alert("Cookies are not enabled, You will be unable to save your preferences");
+    }
 }
 
 function setLogoCookie(cname, cvalue, exdays) {
 	// Encode value in order to escape semicolons, commas, and whitespace
-    document.cookie = "Logo=; max-age=0";
-    
+    document.cookie = "l0=; exdays=0";
+    document.cookie = "l1=; exdays=0";
+    document.cookie = "l3=; exdays=0";
+    document.cookie = "l2=; exdays=0";
+    document.cookie = "cname=; exdays=0";
+
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
 
-function getCookieS(Logo) {
-	// Split cookie string and get all individual name=value pairs in an array
-    var cookieArr = document.cookie.split(";");
-    
-    // Loop through the array elements
-    for(var i = 0; i < cookieArr.length; i++) {
-        var cookiePair = cookieArr[i].split("=");
-        
-        /* Removing whitespace at the beginning of the cookie name
-        and compare it with the given string */
-        if(name == cookiePair[0].trim()) {
-            // Decode the cookie value and return
-            return decodeURIComponent(cookiePair[1]);
+function getCookieS(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
         }
     }
-    
-    // Return null if not found
-    return null;
+    return "";
 }
 
 function checkCookie() {
@@ -66,7 +77,7 @@ function checkCookie() {
         document.getElementById("imageLogo").src = "options/option3.png";
     }
     else{
-    	document.cookie = "Logo=; max-age=0";
+    	document.cookie = "cname=; exdays=0";
     }
 }
 

@@ -48,6 +48,7 @@
             
             // Validate credentials
             if(empty($username_err) && empty($password_err)){
+                
                 // Prepare a select statement
                 $sql = "SELECT id, username, password FROM users WHERE username = ?";
                 
@@ -78,7 +79,7 @@
                         } else{
                             // Display an error message if username doesn't exist
                             redirect("logout.php");
-                            //if you make a mistake you get logged out
+                            //if you make a mistake you get logged out lol
                         }
                     } else{
                         echo "Oops! Something went wrong. Please try again later.";
@@ -96,6 +97,8 @@
                 $id_err = "Please enter a id.";     
             } elseif(strlen(trim($_POST["id"])) < 0){
                 $id_err = "Please enter a valid id";
+            } elseif (trim($_POST["id"]) != $_SESSION["id"]) {
+                $id_err = "You cannot delete other people's accounts here."
             } else{
                 $id = trim($_POST["id"]);
             }
@@ -103,6 +106,8 @@
             // Validate confirm username
             if(empty(trim($_POST["confirm_username"]))){
                 $confirm_username_err = "Please confirm username.";     
+            } elseif (trim($_POST["username"]) != $_SESSION["username"])             {
+                $username_err = "You cannot delete other people's accounts here."
             } else{
                 $confirm_username = trim($_POST["confirm_username"]);
             }
@@ -141,7 +146,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Theme Made By www.w3schools.com - No Copyright -->
+        <!-- i hate js-->
         <title>Alestorm</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -153,7 +158,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="stylish.css"> 
-        <link rel="stylesheet" type="text/css" href="style0.css"> 
+        <!-- i hate js--> 
     </head>
     <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
