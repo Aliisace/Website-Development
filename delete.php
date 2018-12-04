@@ -12,10 +12,10 @@
     }
 
     // Check if the user is logged in, if not then redirect him to login page
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         redirect("login.php");
     }
-    if(!isset($_SESSION["Admin"]) || $_SESSION["Admin"] != true || $_SESSION["Admin"] != 1){
+    if(!isset($_SESSION["Admin"]) || $_SESSION["Admin"] != true || $_SESSION["Admin"] != 1) {
         //echo "normal user 2";
         redirect("welcome.php");
     }
@@ -27,29 +27,29 @@
 	$username = $confirm_username = $id1 = $id = "";
 	$username_err = $confirm_username_err = $id_err = "";
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        if(!empty($_POST["Confirm"])){
-            if(empty(trim($_POST["username"]))){
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(!empty($_POST["Confirm"])) {
+            if(empty(test_input($_POST["username"]))) {
                 $username_err = "Please enter a username";
-            } elseif (trim($_POST["username"]) == $_SESSION["username"])             {
-                $username_err = "You cannot delete your own account here."
+            } elseif (test_input($_POST["username"]) == $_SESSION["username"]) {
+                $username_err = "You cannot delete your own account here.";
             } else{
                 $sql = "SELECT id, username FROM users WHERE username = ?";
 
-                if ($stmt = mysqli_prepare($link, $sql)){
+                if ($stmt = mysqli_prepare($link, $sql)) {
                     mysqli_stmt_bind_param($stmt, "s", $param_username);
 
-                    $param_username = trim($_POST["username"]);
+                    $param_username = test_input($_POST["username"]);
 
-                    if(mysqli_stmt_execute($stmt)){
+                    if(mysqli_stmt_execute($stmt)) {
                         mysqli_stmt_store_result($stmt);
 
-                        if(mysqli_stmt_num_rows($stmt) == 0){
+                        if(mysqli_stmt_num_rows($stmt) == 0) {
                             $username_err = "This username is invalid.";
                         } else{
-                            $username = trim($_POST["username"]);
+                            $username = test_input($_POST["username"]);
                             mysqli_stmt_bind_result($stmt, $id1, $username);
-                            if(mysqli_stmt_fetch($stmt)){
+                            if(mysqli_stmt_fetch($stmt)) {
                             }
                         }
                     } else{
@@ -60,34 +60,34 @@
             }
         } 
         
-        if(!empty($_POST["Delete"])){
+        if(!empty($_POST["Delete"])) {
 
-            if(empty(trim($_POST["id"]))){
+            if(empty(test_input($_POST["id"]))) {
                 $id_err = "Please enter a id.";     
-            } elseif(strlen(trim($_POST["id"])) < 0){
+            } elseif(strlen(test_input($_POST["id"])) < 0) {
                 $id_err = "Please enter a valid id";
-            } elseif (trim($_POST["id"]) == $_SESSION["id"])             {
-                $id_err = "You cannot delete your own account here."
+            } elseif (test_input($_POST["id"]) == $_SESSION["id"]) {
+                $id_err = "You cannot delete your own account here.";
             } else {
-                $id = trim($_POST["id"]);
+                $id = test_input($_POST["id"]);
             }
             
             // Validate confirm username
-            if(empty(trim($_POST["confirm_username"]))){
+            if(empty(test_input($_POST["confirm_username"]))) {
                 $confirm_username_err = "Please confirm username.";     
-            } elseif (trim($_POST["username"]) == $_SESSION["username"])             {
-                $username_err = "You cannot delete your own account here."
+            } elseif (test_input($_POST["username"]) == $_SESSION["username"]) {
+                $username_err = "You cannot delete your own account here.";
             } else{
-                $confirm_username = trim($_POST["confirm_username"]);
+                $confirm_username = test_input($_POST["confirm_username"]);
             }
             
             // Check input errors before inserting in database
-            if(empty($id_err) && empty($confirm_username_err)){
+            if(empty($id_err) && empty($confirm_username_err)) {
                 
                 // Prepare a delete statement
                 $sql = "DELETE FROM users WHERE id = ?";
                  
-                if($stmt = mysqli_prepare($link, $sql)){
+                if($stmt = mysqli_prepare($link, $sql)) {
                     // Bind variables to the prepared statement as parameters
                     mysqli_stmt_bind_param($stmt, "s", $param_id);
                     
@@ -95,7 +95,7 @@
                     $param_id = $id;
 
                    //Attempt to execute the prepared statement
-                    if(mysqli_stmt_execute($stmt)){
+                    if(mysqli_stmt_execute($stmt)) {
                         // Redirect to admin page
                         //redirect("aMember.php");
                         echo "Success";
@@ -111,7 +111,12 @@
         // Close connection
         mysqli_close($link);
     }
-	
+	function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

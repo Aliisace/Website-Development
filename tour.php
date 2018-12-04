@@ -31,9 +31,19 @@
                 </a>
             </span>
             <!-- Container (TOUR Section) -->
-            <h3>THE<br><b>NO GRAVE BUT THE SEA</b><br>
-            GRAND TOUR OF PLANET EARTH<br>
-            <small>(part 2)</small></h3>
+            <h3>
+                THE<br><b>NO GRAVE BUT THE SEA</b>
+                <br>GRAND TOUR OF PLANET EARTH<br>
+                <small>(part 2)</small>
+            </h3>
+            <div id="countup">
+                <h4>We have been on tour for:</h4>
+                <br>
+                <label id="days">00</label>  days  
+                <label id="hours">00</label>  hours  
+                <label id="minutes">00</label>  minutes and  
+                <label id="seconds">00</label>  seconds
+            </div>
         </div>
         <div class="table-responsive-sm" class="text-center">
             <table id="tour" class="table table-dark table-sm table-bordered">
@@ -246,4 +256,5 @@
         </div>
         <?php include 'foot.php'; ?>
     </body>
+    <script type="text/javascript" src="timerTest.js"></script>
 </html>

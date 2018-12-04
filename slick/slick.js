@@ -566,7 +566,7 @@
                 originalSlides.length / slidesPerSection
             );
 
-            for(a = 0; a < numOfSlides; a++){
+            for(a = 0; a < numOfSlides; a++) {
                 var slide = document.createElement('div');
                 for(b = 0; b < _.options.rows; b++) {
                     var row = document.createElement('div');
@@ -888,7 +888,7 @@
                 .removeClass('slick-slide slick-active slick-center slick-visible slick-current')
                 .removeAttr('aria-hidden')
                 .removeAttr('data-slick-index')
-                .each(function(){
+                .each(function() {
                     $(this).attr('style', $(this).data('originalStyling'));
                 });
 

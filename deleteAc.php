@@ -12,7 +12,7 @@
     }
 
     // Check if the user is logged in, if not then redirect him to login page
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         redirect("login.php");
     }
 
@@ -23,15 +23,15 @@
     $username = $password = $confirm_username = $id1 = $id = "";
     $username_err = $password_err = $confirm_username_err = $id_err = "";
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(!empty($_POST["Login"]))
         {
             // Check if username is empty
-            if(empty(trim($_POST["username"]))){
+            if(empty(test_input($_POST["username"]))) {
                 $username_err = "Please enter username.";
             } else{
-                if (trim($_POST["username"]) == $_SESSION["username"]){
-                    $username = trim($_POST["username"]);
+                if (test_input($_POST["username"]) == $_SESSION["username"]) {
+                    $username = test_input($_POST["username"]);
                 }
                 else{
                     redirect("logout.php");
@@ -40,19 +40,19 @@
             }
             
             // Check if password is empty
-            if(empty(trim($_POST["password"]))){
+            if(empty(test_input($_POST["password"]))) {
                 $password_err = "Please enter your password.";
             } else{
-                $password = trim($_POST["password"]);
+                $password = test_input($_POST["password"]);
             }
             
             // Validate credentials
-            if(empty($username_err) && empty($password_err)){
+            if(empty($username_err) && empty($password_err)) {
                 
                 // Prepare a select statement
                 $sql = "SELECT id, username, password FROM users WHERE username = ?";
                 
-                if($stmt = mysqli_prepare($link, $sql)){
+                if($stmt = mysqli_prepare($link, $sql)) {
                     // Bind variables to the prepared statement as parameters
                     mysqli_stmt_bind_param($stmt, "s", $param_username);
                     
@@ -60,16 +60,16 @@
                     $param_username = $username;
                     
                     // Attempt to execute the prepared statement
-                    if(mysqli_stmt_execute($stmt)){
+                    if(mysqli_stmt_execute($stmt)) {
                         // Store result
                         mysqli_stmt_store_result($stmt);
                         
                         // Check if username exists, if yes then verify password
-                        if(mysqli_stmt_num_rows($stmt) == 1){                    
+                        if(mysqli_stmt_num_rows($stmt) == 1) {                    
                             // Bind result variables
                             mysqli_stmt_bind_result($stmt, $id1, $username, $hashed_password);
-                            if(mysqli_stmt_fetch($stmt)){
-                                if(password_verify($password, $hashed_password)){
+                            if(mysqli_stmt_fetch($stmt)) {
+                                if(password_verify($password, $hashed_password)) {
                                     
                                 } else{
                                     redirect("logout.php");
@@ -93,23 +93,23 @@
             
         if(!empty($_POST["Delete"]))
         {
-            if(empty(trim($_POST["id"]))){
+            if(empty(test_input($_POST["id"]))) {
                 $id_err = "Please enter a id.";     
-            } elseif(strlen(trim($_POST["id"])) < 0){
+            } elseif(strlen(test_input($_POST["id"])) < 0) {
                 $id_err = "Please enter a valid id";
-            } elseif (trim($_POST["id"]) != $_SESSION["id"]) {
-                $id_err = "You cannot delete other people's accounts here."
+            } elseif (test_input($_POST["id"]) != $_SESSION["id"]) {
+                $id_err = "You cannot delete other people's accounts here.";
             } else{
-                $id = trim($_POST["id"]);
+                $id = test_input($_POST["id"]);
             }
             
             // Validate confirm username
-            if(empty(trim($_POST["confirm_username"]))){
+            if(empty(test_input($_POST["confirm_username"]))) {
                 $confirm_username_err = "Please confirm username.";     
-            } elseif (trim($_POST["username"]) != $_SESSION["username"])             {
-                $username_err = "You cannot delete other people's accounts here."
+            } elseif (test_input($_POST["username"]) != $_SESSION["username"]) {
+                $username_err = "You cannot delete other people's accounts here.";
             } else{
-                $confirm_username = trim($_POST["confirm_username"]);
+                $confirm_username = test_input($_POST["confirm_username"]);
             }
             
             // Check input errors before inserting in database
@@ -126,10 +126,9 @@
                     $param_id = $id;
 
                    //Attempt to execute the prepared statement
-                    if(mysqli_stmt_execute($stmt)){
-                        // Redirect to admin page
-                        redirect("logout.php")
-                        echo "hi";
+                    if(mysqli_stmt_execute($stmt)) {
+                        // Redirect to index page
+                        redirect("logout.php");
                     } else{
                         echo "Something went wrong. Please try again later.";
                     }
@@ -141,6 +140,13 @@
         } 
         // Close connection
         mysqli_close($link);    
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 ?>
 <!DOCTYPE html>

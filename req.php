@@ -57,7 +57,7 @@
                                         <li>File: logoSwitch.js</li>
                                         <li>Lines: 74-96</li>
                                         <li>
-                                            How: Function to change the src value of the image tag in logo.php which changes the logo on aMember.php/welcome.php to the one the user has chosen using buttons.
+                                            How: Function to change the src variable of the image tag in logo.php which changes the logo on aMember.php/welcome.php to the one the user has chosen using buttons.
                                         </li>
                                     </ul>
                                 </td>
@@ -66,10 +66,10 @@
                                 <td>JavaScript loading of dynamically changing information</td>
                                 <td>
                                     <ul>
-                                        <li>File: </li>
-                                        <li>Line/s: </li>
+                                        <li>File: tour.php/timerTest.js</li>
+                                        <li>Lines: 39-46/entire file, specifically lines 6-23</li>
                                         <li>
-                                            How: 
+                                            How: A set of &lt;div id="countup"&gt; tags containing a clock displaying the time from the start of the first show on the tour./Line 3 sets the date that the upTime function counts from. The upTime function (lines 6-23) calculates the days, hours, minutes and seconds from the intial date and then displays it in the &lt;div id="countup"&gt; tags in tour.php
                                         </li>
                                     </ul>
                                 </td>
@@ -114,7 +114,7 @@
                                 <td>Use of the jQuery AJAX function</td>
                                 <td>
                                     <ul>
-                                        <li>Files: </li>
+                                        <li>Files: even.js/photos.php</li>
                                         <li>Lines: </li>
                                         <li>
                                             How: 
@@ -201,7 +201,7 @@
                                                         <li>Files: changeBack.php</li>
                                                         <li>Lines: 36-60, 85-118</li>
                                                         <li>
-                                                            How: 
+                                                            How: Statements written on lines 36 and 85 have "?" as placeholders for the username variable and the id variable. The mysqli_stmt_bind_param() function (lines 40 & 89), binds the variables to the placeholders in the statement templates. THe placeholders are set to the value of the variables and the code then attempts to execute the statements.
                                                         </li>
                                                     </ul>
                                                 </td>
@@ -213,7 +213,7 @@
                                                         <li>Files: login.php/register.php</li>
                                                         <li>Lines: 72/67</li>
                                                         <li>
-                                                            How: The PHP password_verify function is used to hash and salt the user inputed password/The PHP password_hash fucntion is used to hash and salt the user inputed password
+                                                            How: The PHP password_verify function is used to hash and salt the user inputed password/The PHP password_hash function is used to hash and salt the user inputed password
                                                         </li>
                                                     </ul>
                                                 </td>
@@ -222,10 +222,10 @@
                                                 <td>Validation of user input</td>
                                                 <td>
                                                     <ul>
-                                                        <li>File: </li>
-                                                        <li>Line/s: </li>
+                                                        <li>File: changeBack.php</li>
+                                                        <li>Lines: 126-131</li>
                                                         <li>
-                                                            How: 
+                                                            How: Function test_input is called everytime data is submitted into the form stripping unnecessary characters from the user input data, removing any backslashes (\) and converting special characters into html entities using the htmlspecialcharacters function.
                                                         </li>
                                                     </ul>
                                                 </td>
@@ -242,14 +242,14 @@
                                                     </ul>
                                                 </td>
                                             </tr>
-                                        </table> <!-- table 2 -->
+                                        </table> <!-- table 3 -->
                                     </div>
                                 </td>
                             </tr>
-                        </table> <!-- table 1 -->
+                        </table> <!-- table 2 -->
                     </td>
                 </tr>
-            </table>
+            </table> <!--- table 3 -->
         </div>
         <?php include 'foot.php'; ?>
     </body>

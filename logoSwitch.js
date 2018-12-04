@@ -14,7 +14,7 @@ function prepPage() {
 	//document.getElementById("show").onclick = function() {showCookie();};
 }
 
-/*function showCookie(){
+/*function showCookie() {
     console.log(document.cookie);
 }*/
 
@@ -83,19 +83,19 @@ function checkCookie() {
 
 function setLogo(Logo) {
 	console.log(Logo); 
-	if (Logo == "l0"){
+	if (Logo == "l0") {
 		document.getElementById("imageLogo").src = "options/option0.png";
 		setLogoCookie("l0", "yes", 30);
 	}
-	else if (Logo == "l1"){
+	else if (Logo == "l1") {
 		document.getElementById("imageLogo").src = "options/option1.png";
 		setLogoCookie("l1", "yes", 30);
 	}
-	else if (Logo == "l2"){
+	else if (Logo == "l2") {
 		document.getElementById("imageLogo").src = "options/option2.png";
 		setLogoCookie("l2", "yes", 30);
 	}
-	else if (Logo == "l3"){
+	else if (Logo == "l3") {
 		document.getElementById("imageLogo").src = "options/option3.png";
 		setLogoCookie("l3", "yes", 30);
 	}

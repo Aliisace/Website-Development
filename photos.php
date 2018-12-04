@@ -7,7 +7,7 @@
     session_start();
 
     // Check if the user is logged in, if not then redirect him to login page
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         header("location: login.php");
         exit;
     }
@@ -42,43 +42,90 @@
         </div>
         <section class="variable slider">
             <div>
-                <img src="photos/1.jpg" height="auto" width="1500px">
+                <img src="photos/1.jpg">
             </div>
             <div>
-                <img src="photos/2.jpg" height="auto" width="1500px">
+                <img src="photos/2.jpg">
             </div>
             <div>
-                <img src="photos/3.jpg" height="auto" width="1500px">
+                <img src="photos/3.jpg">
             </div>
             <div>
-                <img src="photos/4.jpg" height="auto" width="1500px">
+                <img src="photos/4.jpg">
             </div>
             <div>
-                <img src="photos/5.jpg" height="auto" width="1500px">
+                <img src="photos/5.jpg">
             </div>
             <div>
-                <img src="photos/6.jpg" height="auto" width="1500px">
+                <img src="photos/6.jpg">
             </div>
             <div>
-                <img src="photos/7.png" height="auto" width="1500px">
+                <img src="photos/7.png">
             </div>
             <div>
-                <img src="photos/8.png" height="auto" width="1500px">
+                <img src="photos/8.png">
             </div>
             <div>
-                <img src="photos/9.png" height="auto" width="1500px">
+                <img src="photos/9.png">
+            </div>
+            <div>
+                <img src="photos/10.png">
+            </div>
+            <div>
+                <img src="photos/11.png">
+            </div>
+            <div>
+                <img src="photos/12.jpg">
+            </div>
+            <div>
+                <img src="photos/13.jpg">
+            </div>
+            <div>
+                <img src="photos/14.jpg">
+            </div>
+            <div>
+                <img src="photos/15.jpg">
+            </div>
+            <div>
+                <img src="photos/16.jpg">
+            </div>
+            <div>
+                <img src="photos/17.jpg">
+            </div>
+            <div>
+                <img src="photos/18.jpg">
+            </div>
+            <div>
+                <img src="photos/19.jpg">
+            </div>
+            <div>
+                <img src="photos/20.jpg">
+            </div>
+            <div>
+                <img src="photos/21.jpg">
+            </div>
+            <div>
+                <img src="photos/22.png">
+            </div>
+            <div>
+                <img src="photos/23.png">
             </div>
         </section>
         <div class="container mt-3">
             <br>
             <button id="more" class="btn btn-dark">Load More Content</button>
-            <p><small>Warning: badly formated text will appear</small><br><small>Warning: I mean badly formated</small></p>
+            <button id="less" class="btn btn-dark">Hide the Content</button>
+            <button id="blue" class="btn btn-dark">BLUE ITALIC TEXT!!!</button>
+            <button id="even" class="btn btn-dark">Even More Content!!!!!!!!!!!</button>
+            <p><small>Warning: badly formated text will appear<br>Warning: I mean badly formated</small></p>
             <p id="moreText"></p>
+            <p id="evenMore"></p>
         </div>
         <!-- Footer -->
         <?php include 'foot.php'; ?>
         <script src="jquery.hello-world.js"></script>
         <script src="./slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="test.js" type="text/javascript"></script>
+        <script src="even.js" type="text/javascript"></script>
     </body>
 </html>
