@@ -132,7 +132,10 @@
                 </div>
                 <p>Already have an account? <a href="login.php">Login here</a>.</p>
             </form>
+            <button class="btn btn-default" id="TsandCs">View Terms and Conditions</button><br><button class="btn btn-default" id="PP">View Privacy Policy</button>
         </div>
+        <p id="TnC"></p><p id="PrivPol"></p>
         <?php include 'foot.php'; ?>
     </body>
+    <script src="TnCPP.js" type="text/javascript"></script>
 </html>

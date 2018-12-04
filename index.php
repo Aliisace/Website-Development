@@ -80,4 +80,5 @@
 		</div>
 		<?php include 'foot.php'; ?>
 	</body>
+	<script src="index.js" type="text/javascript"></script>
 </html>

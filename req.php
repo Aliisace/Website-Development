@@ -17,11 +17,36 @@
     <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
         <br><br>
+        <div class="container-fluid text-center">    
+            <table class="table-striped table-light table-bordered table-sm">
+                <tr class="text-center thead-light">
+                    <th colspan="2">Existing Accounts</th>
+                </tr>
+                <tr class="text-center thead-light">
+                    <th scope="col">Username</th>
+                    <th scope="col" class="sub">Password</th>
+                    <th scope="col" class="sub">Admin?</th>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>ac</td>
+                    <td>ac</td>
+                    <td>No</td>
+                </tr>
+            </table><br><br><br>
+        </div>
         <div class="table-responsive-md">
             <table class="table table-sm">
                 <tr>
                     <td>
                         <table class="table table-striped table-light table-bordered table-sm">
+                            <tr class="text-center thead-light">
+                                <th colspan="2">Requirements</th>
+                            </tr>
                             <tr class="text-center thead-light">
                                 <th scope="col">Requirement</th>
                                 <th scope="col">Application</th>
@@ -176,10 +201,14 @@
                                 <td>Appropriate consideration of relevant laws</td>
                                 <td>
                                     <ul>
-                                        <li>File: </li>
-                                        <li>Line/s: </li>
+                                        <li>File: index.php/index.js/register.php/TnCPP.js</li>
+                                        <li>Lines: 83/entire file/135 & 137/entire file</li>
                                         <li>
-                                            How: 
+                                            How: On load of index.php an alert pops up informing the user that by using the site they are concenting to cookies./alert pops up informing the user of the use of cookies on this site./Buttons are used to load the privacy policy and the terms and contitions./functions to load the privacy policy and terms and conditions.
+                                            <br>To be GDPR compliant, only information that is used is asked for when users are registering is:
+                                            <br>Username - Used to identify the user
+                                            <br>Password - Used to secure the user's account
+                                            <br>To comply with the cookie law, the user is given an alert to say that cookies are used on the website
                                         </li>
                                     </ul>
                                 </td>
@@ -236,10 +265,10 @@
                                                 <td>Any other relevant security features</td>
                                                 <td>
                                                     <ul>
-                                                        <li>File: </li>
-                                                        <li>Line/s: </li>
+                                                        <li>File: N/A</li>
+                                                        <li>Line: N/A</li>
                                                         <li>
-                                                            How: 
+                                                            How: N/A
                                                         </li>
                                                     </ul>
                                                 </td>
