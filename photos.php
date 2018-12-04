@@ -37,7 +37,7 @@
     </head>
     <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
-        <div class="container mt-3">
+        <div class="container-fluid mt-3">
             <h2>PHOTOS</h2>
         </div>
         <section class="variable slider">
@@ -111,7 +111,7 @@
                 <img src="photos/23.png">
             </div>
         </section>
-        <div class="container mt-3">
+        <div class="container-fluid mt-3">
             <br>
             <button id="more" class="btn btn-dark">Load More Content</button>
             <button id="less" class="btn btn-dark">Hide the Content</button>

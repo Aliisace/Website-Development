@@ -63,7 +63,6 @@
 					</div>
 				</div>
 			</div>
-			<br><br>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm">
@@ -76,6 +75,9 @@
 			</div>
 		</div>
 		<div class="parallaxI"></div>
+		<div class="text-center"><br>
+			<a class="twitter-timeline" data-width="600" data-height="500" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/alestormband?ref_src=twsrc%5Etfw">Tweets by alestormband</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+		</div>
 		<?php include 'foot.php'; ?>
 	</body>
 </html>

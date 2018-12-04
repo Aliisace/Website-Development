@@ -14,39 +14,43 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="stylish.css">
     </head>
-    <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <body class="text-center" class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
         <div class="text-center">    
-            <img src="alestorm.png" class="img-fluid" height="500" width="auto" ><br>
+            <img src="alestorm.png" class="img-fluid" height="500" width="auto"><br>
         </div>
         <div class="parallaxT"></div>
-        <div class="text-center">          
-            <span class="release">       
-                <h2>NEW ALBUM OUT NOW!</h2>
-                <h4>CD, mediabook, box-set, vinyl, rubber duck, and more!</h4>
-                <iframe class="spotify" src="https://open.spotify.com/embed?uri=spotify:album:6leGMq1KVN1SWHScCunixS" width="600" height="80" frameborder="0" allowtransparency="true"></iframe>
-                <br>
-                <a href="http://alestorm.napalmrecords.com" target="_blank">
-                    <h5>BUY IT NOW FROM NAPALM RECORDS</h5>
-                </a>
-            </span>
-            <!-- Container (TOUR Section) -->
-            <h3>
-                THE<br><b>NO GRAVE BUT THE SEA</b>
-                <br>GRAND TOUR OF PLANET EARTH<br>
-                <small>(part 2)</small>
-            </h3>
-            <div id="countup">
-                <h4>We have been on tour for:</h4>
-                <br>
-                <label id="days">00</label>  days  
-                <label id="hours">00</label>  hours  
-                <label id="minutes">00</label>  minutes and  
-                <label id="seconds">00</label>  seconds
+        <div class="container-fluid">
+            <div class="text-center">          
+                <span class="release">       
+                    <h2>NEW ALBUM OUT NOW!</h2>
+                    <h4>CD, mediabook, box-set, vinyl, rubber duck, and more!</h4>
+                    <iframe class="spotify" src="https://open.spotify.com/embed?uri=spotify:album:6leGMq1KVN1SWHScCunixS" width="600" height="80" frameborder="0" allowtransparency="true"></iframe>
+                    <br>
+                    <h5>
+                        <a href="http://alestorm.napalmrecords.com" target="_blank">
+                            BUY IT NOW FROM NAPALM RECORDS
+                        </a>
+                    </h5>
+                </span>
+                <!-- Container (TOUR Section) -->
+                <h3>
+                    THE<br><b>NO GRAVE BUT THE SEA</b>
+                    <br>GRAND TOUR OF PLANET EARTH<br>
+                    <small>(part 2)</small>
+                </h3>
+                <div id="countup">
+                    <h4>We have been on tour for:</h4>
+                    <br>
+                    <label id="days">00</label>  days  
+                    <label id="hours">00</label>  hours  
+                    <label id="minutes">00</label>  minutes and  
+                    <label id="seconds">00</label>  seconds
+                </div>
             </div>
         </div>
-        <div class="table-responsive-sm" class="text-center">
-            <table id="tour" class="table table-dark table-sm table-bordered">
+        <div class="table-responsive-md">
+            <table class="table table-dark table-striped table-sm table-bordered">
                 <tr class="thead-light">
                     <th colspan="5">
                         <h4 class="text-center">Skalstorm European Tour 2018</h4>

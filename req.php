@@ -17,11 +17,11 @@
     <body class="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
         <?php include 'nav.php'; ?>
         <br><br>
-        <div class="table-responsive">
+        <div class="table-responsive-md">
             <table class="table table-sm">
                 <tr>
                     <td>
-                        <table class="table table-light table-bordered table-sm">
+                        <table class="table table-striped table-light table-bordered table-sm">
                             <tr class="text-center thead-light">
                                 <th scope="col">Requirement</th>
                                 <th scope="col">Application</th>
@@ -115,9 +115,9 @@
                                 <td>
                                     <ul>
                                         <li>Files: even.js/photos.php</li>
-                                        <li>Lines: </li>
+                                        <li>Lines: entire file/119</li>
                                         <li>
-                                            How: 
+                                            How: jQuery function that uses the ajax load() method to load data from a text file./Button that calls the jQuery on click.
                                         </li>
                                     </ul>
                                 </td>
@@ -163,9 +163,11 @@
                                 <td>
                                     <ul>
                                         <li>Files: login.php/register.php/reset-password.php/deleteAc.php/delete.php</li>
-                                        <li>Lines: Select statement on line 53/Insert statement on line 59/Update statement on line 43/Select statement on line 53 and delete statement on line 119/Select statement on line 37 and delete statement on line 88</li>
                                         <li>
-                                            How: Select statement used to get data from a table in a MySQL database to log in/Insert statement used to add a row to a table in a MySQL database/Update statement to update the password of the account/Select statement used to get data from a table in a MySQL database to log in and a delete statement to delete the account of the user.
+                                            Lines: Select statement on line 53/Insert statement on line 59/Update statement on line 43/Select statement on line 53 and delete statement on line 119/Select statement on line 37 and delete statement on line 88
+                                        </li>
+                                        <li>
+                                            How: SELECT statement used to get data from a table in a MySQL database to log in/INSERT statement used to add a row to a table in a MySQL database/UPDATE statement to update the password of the account/SELECT statement used to get data from a table in a MySQL database to log in and a DELETE statement to delete the account of the user.
                                         </li>
                                     </ul>
                                 </td>
@@ -249,7 +251,7 @@
                         </table> <!-- table 2 -->
                     </td>
                 </tr>
-            </table> <!--- table 3 -->
+            </table> <!--- table 1 -->
         </div>
         <?php include 'foot.php'; ?>
     </body>
